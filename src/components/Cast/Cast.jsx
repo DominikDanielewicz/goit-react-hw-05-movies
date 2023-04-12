@@ -1,5 +1,6 @@
 import React from 'react';
 import Placeholder from 'images/placeholder.jpg';
+import PropTypes from 'prop-types';
 
 const Cast = ({ data }) => {
   return (
@@ -20,6 +21,16 @@ const Cast = ({ data }) => {
       ))}
     </ul>
   );
+};
+
+Cast.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      src: PropTypes.string,
+      alt: PropTypes.string,
+    })
+  ),
 };
 
 export default Cast;

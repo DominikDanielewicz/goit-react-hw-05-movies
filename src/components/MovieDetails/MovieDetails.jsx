@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Placeholder from 'images/placeholder.jpg';
+import PropTypes from 'prop-types';
 
 const MovieDetails = ({ data }) => {
   const { poster_path, title, original_title, vote_average, overview, genres } =
@@ -40,6 +41,15 @@ const MovieDetails = ({ data }) => {
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  original_title: PropTypes.string,
+  vote_average: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.array,
 };
 
 export default MovieDetails;

@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Search = props => {
+const Search = ({ onSubmit }) => {
   return (
-    <form onSubmit={props.onSubmit}>
+    <form onSubmit={onSubmit}>
       <input type="text" name="query" />
       <button type="submit">Search</button>
     </form>
   );
+};
+
+Search.propTypes = {
+  onSubmit: PropTypes.func,
 };
 
 export default Search;
