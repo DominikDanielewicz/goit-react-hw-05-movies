@@ -1,16 +1,19 @@
-export const App = () => {
+import React from 'react';
+import AppRoutes from './AppRoutes';
+
+const App = () => {
   return (
     <div
       style={{
         height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        fontSize: 20,
+        color: '#010101',
       }}
     >
-      React homework template
+      <AppRoutes />
     </div>
   );
 };
+
+export default App;
