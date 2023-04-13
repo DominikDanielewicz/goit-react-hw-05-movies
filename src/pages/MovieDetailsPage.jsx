@@ -11,7 +11,7 @@ const MovieDetailsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/movies';
+  let backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     setIsLoading(true);

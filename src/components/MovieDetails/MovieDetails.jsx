@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const MovieDetails = ({ data }) => {
   const { poster_path, title, original_title, vote_average, overview, genres } =
     data;
-
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
   const poster = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
