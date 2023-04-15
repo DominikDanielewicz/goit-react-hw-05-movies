@@ -29,12 +29,16 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   return (
-    <>
+    <main>
       <BackLink to={backLinkHref}>Go back</BackLink>
-      {isLoading ? <Loader /> : <MovieDetails data={movie} />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <MovieDetails data={movie} location={backLinkHref} />
+      )}
       <Outlet />
       {error && <p>Something went wrong. Try again later</p>}
-    </>
+    </main>
   );
 };
 

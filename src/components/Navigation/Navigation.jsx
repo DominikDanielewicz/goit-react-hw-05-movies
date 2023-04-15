@@ -1,18 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {
+  StyledNavigation,
+  NavigationList,
+  NavigationLink,
+  NavigationListElement,
+} from './Navigation.styled';
 
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies">Movies</NavLink>
-        </li>
-      </ul>
-    </nav>
+    <StyledNavigation>
+      <NavigationList>
+        <NavigationListElement>
+          <NavigationLink to="/">Home</NavigationLink>
+        </NavigationListElement>
+        <NavigationListElement>
+          <NavigationLink to="/movies">Movies</NavigationLink>
+        </NavigationListElement>
+      </NavigationList>
+    </StyledNavigation>
   );
 };
 

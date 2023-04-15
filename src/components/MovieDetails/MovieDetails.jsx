@@ -1,9 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Placeholder from 'images/placeholder.jpg';
 import PropTypes from 'prop-types';
+import {
+  StyledMovieDetails,
+  MovieDetailsInfo,
+  MovieDetailsImage,
+  MovieDetailsDescription,
+  MovieDetailsMenu,
+  MovieDetailsLink,
+} from './MovieDetails.styled';
 
-const MovieDetails = ({ data }) => {
+const MovieDetails = ({ data, location }) => {
   const { poster_path, title, original_title, vote_average, overview, genres } =
     data;
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
@@ -13,32 +20,40 @@ const MovieDetails = ({ data }) => {
   const genresList = genres?.map(genre => genre.name).join(' ');
 
   return (
-    <>
-      <div>
-        <div>
-          <img src={poster} alt={original_title} />
-        </div>
-        <div>
+    <StyledMovieDetails>
+      <MovieDetailsInfo>
+        <MovieDetailsImage src={poster} alt={original_title} />
+        <MovieDetailsDescription>
           <div>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <p>{userScore}</p>
           </div>
           <div>
-            <h2>Overview</h2>
+            <h3>Overview</h3>
             <p>{overview}</p>
           </div>
           <div>
             <h3>Genres</h3>
             <p>{genresList}</p>
           </div>
-        </div>
-      </div>
+        </MovieDetailsDescription>
+      </MovieDetailsInfo>
       <div>
         <h3>Additional Information</h3>
-        <NavLink to="cast">Cast</NavLink>
-        <NavLink to="reviews">Reviews</NavLink>
+        <MovieDetailsMenu>
+          <li>
+            <MovieDetailsLink to="cast" state={{ from: location }}>
+              Cast
+            </MovieDetailsLink>
+          </li>
+          <li>
+            <MovieDetailsLink to="reviews" state={{ from: location }}>
+              Reviews
+            </MovieDetailsLink>
+          </li>
+        </MovieDetailsMenu>
       </div>
-    </>
+    </StyledMovieDetails>
   );
 };
 

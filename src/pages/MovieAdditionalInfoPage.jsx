@@ -39,7 +39,7 @@ const MovieCastPage = () => {
   }, [pathname]);
 
   return (
-    <div>
+    <main>
       {error && <p>Something went wrong. Try again later</p>}
       {isLoading && <Loader />}
       {!isLoading && pathname.includes('credits') && (
@@ -48,7 +48,7 @@ const MovieCastPage = () => {
       {!isLoading && pathname.includes('reviews') && (
         <Reviews data={movieAdditionalInfo} />
       )}
-    </div>
+    </main>
   );
 };
 

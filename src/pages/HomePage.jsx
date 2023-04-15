@@ -25,13 +25,13 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <h1>Trending today</h1>
+    <main>
+      <h2>Trending today</h2>
       <div>
         {isLoading ? <Loader /> : <MoviesList data={movies} />}
         {error && <p>Something went wrong. Try again later</p>}
       </div>
-    </>
+    </main>
   );
 };
 

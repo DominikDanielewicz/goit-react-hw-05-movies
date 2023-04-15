@@ -38,7 +38,8 @@ const MoviesPage = () => {
   };
 
   return (
-    <>
+    <main>
+      <h2>Search your movies</h2>
       {isLoading && <Loader />}
       <Search onSubmit={searchMoviesQuerySubmitHandler} />
       {query === '' && (
@@ -50,7 +51,7 @@ const MoviesPage = () => {
       {query && !isLoading && <MoviesList data={searchedMovies} />}
       <Outlet />
       {error && <p>Something went wrong. Try again later</p>}
-    </>
+    </main>
   );
 };
 

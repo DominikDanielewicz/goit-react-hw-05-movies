@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledReview, ReviewCard } from './Reviews.styled';
 
 const Reviews = ({ data }) => {
   return (
-    <>
+    <section>
       {data.length === 0 ? (
         <p>We don't have any reviews for this movie</p>
       ) : (
-        <ul>
+        <StyledReview>
           {data.map(review => (
-            <li key={review.id}>
+            <ReviewCard key={review.id}>
               <h3>Author: {review.author}</h3>
               <p>{review.content}</p>
-            </li>
+            </ReviewCard>
           ))}
-        </ul>
+        </StyledReview>
       )}
-    </>
+    </section>
   );
 };
 
