@@ -1,4 +1,4 @@
-# React module - Movie Wiki React App
+# React module - Movies Wiki React App
 
 ## One of the series of tasks aimed at in-depth knowledge of React.
 
